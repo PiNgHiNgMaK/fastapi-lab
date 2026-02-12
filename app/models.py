@@ -7,13 +7,13 @@ class TaskBase(BaseModel):
     description: Optional[str] = None
     completed: bool = False
 
-# Model for Creation (Input)
+
 class TaskCreate(TaskBase):
     pass
 
-# Model for Reading (Output - includes ID)
+
 class Task(TaskBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
